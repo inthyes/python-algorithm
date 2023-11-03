@@ -1,9 +1,7 @@
-import sys
-n = int(sys.stdin.readline())
+n = int(input())
+dp = [0] * (n+1)
+dp[1] = 1
 
-f = [i for i in range(n+1)]
-print(f)
-for i in range(2, n+1):
-  f[i] = f[i-1]+f[i-2]
-  print(f[i])
-print(f[-1])
+for i in range(2,n+1):
+  dp[i] = dp[i-1]+dp[i-2]
+print(dp[n])
